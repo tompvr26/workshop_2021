@@ -59,6 +59,13 @@
               </div>
             </router-link>
           </li>
+          <li>
+            <router-link to="/Ouuka" class="links-animation">
+              <div v-on:click="toggleMenu" class="links">
+                Parler avec Ouuka
+              </div>
+            </router-link>
+          </li>
 
         </ul>
       </div>

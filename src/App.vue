@@ -19,11 +19,9 @@ export default {
 
 
 <style lang="sass">
-// importation du fichier de variable SaSS
 @import "styles/variables.sass"
 
 
-// initialisation des font dans notre SaSS
 @font-face
   font-family: "BebasNeue"
   src: url("styles/fonts/BebasNeue-Regular.ttf") format("truetype")
@@ -121,27 +119,5 @@ html.is-animating .transition-fade
 
 .color-1
   color: $color_1_of_6
-
-/*  IPAD - 1024x768  */
-/*  IPAD PRO - 1366x1024  */
-/*  IPHONE X - 375x812  */
-/*  Galaxy S5 - 360x640  */
-/*  Pixel XL 2 - 411x823  */
-
-/*
-
-  @media screen and (max-width: 1020px)
-  @media screen and (max-width: 820px)
-  @media screen and (max-width: 670px)
-  @media screen and (max-width: 570px)
-  @media screen and (max-width: 420px)
-  @media screen and (max-width: 375px)
-
-  */
-
-
-
-
-
 
 </style>
