@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import NotFound from "../components/NotFound";
 import WhatIs from "../views/WhatIs";
+import ChatBot from "../views/ChatBot";
 
 
 
@@ -27,6 +28,14 @@ const routes = [
     component: WhatIs,
     meta: {
       title: "Qu'est-ce que le Cyber Harcèlement",
+    }
+  },
+  {
+    path: '/Ouuka',
+    name: 'Ouuka',
+    component: ChatBot,
+    meta: {
+      title: "Discutons-ensembles",
     }
   },
 
