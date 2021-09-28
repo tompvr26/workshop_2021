@@ -10,7 +10,8 @@
         </filter>
       </defs>
     </svg>
-    <div class="plates" id="burgerContainer">
+    <div class="fixed-right">
+      <div class="plates" id="burgerContainer">
       <div class="plate plate2" id="plate-toggle" v-on:click="toggleMenu">
         <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
           <path class="line line1"
@@ -32,6 +33,8 @@
         </svg>
       </div>
     </div>
+    </div>
+
     <div id="sidenavMenu" class="sidenav">
       <div class="list-menu">
         <ul>
@@ -165,17 +168,21 @@ export default {
   transition: 0.5s
   text-align: center
   z-index: 10
-  //background-color: #6f89ff
+  background-color: #ffffff
 
 svg
   height: 60px
   width: 60px
   position: fixed
 
+.fixed-right
+  display: flex
+  justify-content: flex-end
+
 .plates
   right: 0
   top: 0
-  position: absolute
+  position: relative
   cursor: pointer
   display: flex
   flex-wrap: wrap

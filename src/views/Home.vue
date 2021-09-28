@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-
+  <div class="container">
+    <h1 class="title">Dites <span class="color-1">STOP</span> au Cyber Harcèlement</h1>
   </div>
 </template>
 

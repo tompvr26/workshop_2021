@@ -43,7 +43,6 @@ export default {
 
 .title
   font-family: $font-title
-  text-align: center
   margin: 0
   padding-top: 20px
   font-size: $size-title
@@ -101,13 +100,27 @@ html.is-animating .transition-fade
 
 
 .container
-  padding: 0 10px
+  padding: 0 60px
 
 .center
   text-align: center
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.color-1
+  color: $color_1_of_6
 
 /*  IPAD - 1024x768  */
 /*  IPAD PRO - 1366x1024  */
