@@ -125,7 +125,6 @@ export default {
 
 .list-menu
   padding: 30px
-
   ul
     list-style: none
     li
@@ -189,7 +188,7 @@ svg
 .plates
   right: 0
   top: 0
-  position: relative
+  position: absolute
   cursor: pointer
   display: flex
   flex-wrap: wrap
