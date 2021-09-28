@@ -1,0 +1,92 @@
+// background color
+$dark-background: #1d1d1d
+$light-background: #ffffff
+
+// Colors palette
+$color_1_of_6: #ccb2fa
+$color_2_of_6: #ecc6f7
+$color_3_of_6: #ddb6f9
+$color_4_of_6: #d3bdfa
+$color_5_of_6: #d0d1fb
+$color_6_of_6: #cee6fd
+
+// Fonts and FontSize
+$font-title: 'eurostyleB'
+$font-subtitle: 'Pr'
+$font-paragraphe: 'mk2', sans-serif
+
+$size-title: 2.7rem
+$size-subtitle: 1.4rem
+$size-paragraphe: 18px
+
+
+
+
+
+
+
+
+
+
+
+
+// ANIMATION
+
+.text-focus-in
+  -webkit-animation: text-focus-in .5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+  animation: text-focus-in .5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+
+.text-blur-out
+  -webkit-animation: text-blur-out 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both
+  animation: text-blur-out 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both
+
+
+
+/*****************************************/
+            TEXT-FOCUS-IN
+/*****************************************/
+@-webkit-keyframes text-focus-in 
+  0%
+    -webkit-filter: blur(12px)
+    filter: blur(12px)
+    opacity: 0
+
+  100%
+    -webkit-filter: blur(0px)
+    filter: blur(0px)
+    opacity: 1
+
+
+@keyframes text-focus-in 
+  0%
+    -webkit-filter: blur(12px)
+    filter: blur(12px)
+    opacity: 0
+
+  100%
+    -webkit-filter: blur(0px)
+    filter: blur(0px)
+    opacity: 1
+
+
+/*****************************************/
+            TEXT-BLUR-OUT
+/*****************************************/
+
+@-webkit-keyframes text-blur-out
+  0%
+    -webkit-filter: blur(0.01)
+    filter: blur(0.01)
+
+  100%
+    -webkit-filter: blur(12px) opacity(0%)
+    filter: blur(12px) opacity(0%)
+
+@keyframes text-blur-out
+  0%
+    -webkit-filter: blur(0.01)
+    filter: blur(0.01)
+
+  100%
+    -webkit-filter: blur(12px) opacity(0%)
+    filter: blur(12px) opacity(0%)
