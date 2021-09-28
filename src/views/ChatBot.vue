@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="title">Je suis Ouuka</h1>
 
 
 
@@ -9,16 +10,17 @@
 
 <script>
 export default {
-  name: "ChatBot"
+  name: "ChatBot",
+  mounted() {
+
+  }
 }
 </script>
 
 <style lang="sass" scoped>
+@import "../styles/variables.sass"
 
 
-
-body
-  background: $color-1_of_6
 
 
 </style>
