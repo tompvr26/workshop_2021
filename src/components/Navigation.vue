@@ -53,16 +53,16 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/" class="links-animation">
+            <router-link to="/QCM" class="links-animation">
               <div v-on:click="toggleMenu" class="links">
-                Dénoncer un Cyber Harcèlement
+                Jeu interactif
               </div>
             </router-link>
           </li>
           <li>
             <router-link to="/Ouuka" class="links-animation">
               <div v-on:click="toggleMenu" class="links">
-                Parler avec Ouuka
+                Signaler un harcèlement
               </div>
             </router-link>
           </li>

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import NotFound from "../components/NotFound";
 import WhatIs from "../views/WhatIs";
 import ChatBot from "../views/ChatBot";
+import QCM from "../views/QCM";
 
 
 
@@ -36,6 +37,15 @@ const routes = [
     component: ChatBot,
     meta: {
       title: "Discutons-ensembles",
+    }
+  },
+
+  {
+    path: '/QCM',
+    name: 'QCM',
+    component: QCM,
+    meta: {
+      title: "Jouons-ensembles",
     }
   },
 
