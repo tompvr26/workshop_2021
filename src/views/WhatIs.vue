@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="whatis">
     <div class="container">
 
       <div class="card">
@@ -63,7 +63,7 @@ export default {
 
 <style lang="sass">
 
-body
+.whatis
   background: $color_1_of_6
 
 h1
