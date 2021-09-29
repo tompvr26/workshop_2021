@@ -1,10 +1,9 @@
 <template>
   <div class="container">
     <img src="../assets/icons8-bot.png" alt="">
-    <div class="messagebox" style="margin-bottom: 17px">
-      <p>Salut 👋🏼</p>
-    </div>
+
     <div class="messagebox">
+      <p>Salut 👋🏼</p>
       <p>Moi c'est Ouuka, je suis votre bot assistant. Que puis-je faire pour vous ?</p>
     </div>
     <div class="grid-container">
@@ -43,11 +42,11 @@ export default {
 
 
 .grid-container
+  margin: auto
   padding: 50px
-  bottom: 0
   display: grid
   grid-gap: 50px
-  grid-template-columns: 30% 30% 30%
+  grid-template-columns: auto
 
 
 .grid-item
@@ -60,7 +59,7 @@ export default {
     color: white
     font-family: $font-title
     font-size: 20px
-    padding: 50px 10px
+    padding: 40px 10px
   &:hover
     border-radius: 20px
     background: #CCB2FA
