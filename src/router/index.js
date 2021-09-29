@@ -54,7 +54,7 @@ const routes = [
     name: 'NotFound',
     component: NotFound,
     meta: {
-      title: '404 - erreur',
+      title: '404 - Erreur',
     }
   },
 ]
@@ -108,7 +108,7 @@ router.beforeEach((to, from, next) => {
   }).forEach(tag => document.head.appendChild(tag));
 
   if (!to.matched.length) {
-    next('/notFound');
+    next('/NotFound');
   } else {
     next();
   }

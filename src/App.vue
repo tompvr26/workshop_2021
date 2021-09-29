@@ -42,7 +42,7 @@ export default {
 .title
   font-family: $font-title
   margin: 0
-  padding-top: 20px
+  padding-top: 50px
   font-size: $size-title
   -webkit-animation: title 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
   animation: title 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
@@ -92,29 +92,11 @@ html.is-animating .transition-fade
 
 
 
-
-
-
-
-
 .container
-  padding: 0 60px
+  padding: 0 50px
 
 .center
   text-align: center
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .color-1
