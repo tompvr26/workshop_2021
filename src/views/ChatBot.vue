@@ -42,11 +42,11 @@ export default {
 
 
 .grid-container
-  margin: auto
+  justify-content: center
   padding: 50px
   display: grid
   grid-gap: 50px
-  grid-template-columns: auto
+  grid-template-columns: 40% 40%
 
 
 .grid-item
@@ -68,7 +68,8 @@ export default {
 
 
 .container
-  height: 100vh
+  height: 100%
+  min-height: 100vh
   background: $color_1_of_6
   img
     padding-top: 70px
