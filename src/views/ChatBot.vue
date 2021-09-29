@@ -1,43 +1,94 @@
 <template>
-  <div class="container">
-    <img src="../assets/icons8-bot.png" alt="">
-
-    <div class="messagebox">
-      <p>Salut 👋🏼</p>
-      <p>Moi c'est Ouuka, je suis votre bot assistant. Que puis-je faire pour vous ?</p>
-    </div>
-    <div class="grid-container">
-
-
-      <div class="grid-item">
-        <p>Signaler un fait</p>
+  <div>
+    <div class="container">
+      <img src="../assets/icons8-bot.png" alt="">
+      <div class="messagebox">
+        <p>Salut 👋🏼</p>
+        <p>Moi c'est Ouuka, je suis votre bot assistant. Que puis-je faire pour vous ?</p>
       </div>
-      <div class="grid-item">
-        <p>Signaler un fait</p>
-      </div>
-      <div class="grid-item">
-        <p>Signaler un fait</p>
-      </div>
-      <div class="grid-item">
-        <p>Je suis victime d'un fait. Que faire ?</p>
+      <div class="grid-container">
+        <div class="grid-item" v-on:click="toggleForm">
+          <p>Signaler un fait</p>
+        </div>
+        <div class="grid-item">
+          <p>Je suis victime d'un fait. Que faire ?</p>
+        </div>
       </div>
     </div>
 
 
 
-
+    <div id="form" class="formulaire">
+      <div class="previous" v-on:click="toggleForm">&#8249;</div>
+      <formstepper></formstepper>
+    </div>
   </div>
 </template>
 
 <script>
-
-
+import Formstepper from "../components/ViewResponceBot/Formstepper";
 
 export default {
+  name: "ChatBot",
+  components: {Formstepper},
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleForm: function () {
+      this.isActive = !this.isActive;
+
+      const form = document.getElementById("form");
+
+      if (!this.isActive) {
+        console.log('if click');
+        form.classList.remove('scale-in-hor-center')
+
+        form.style.width = "0";
+
+      } else {
+        console.log('else click');
+        form.classList.add('scale-in-hor-center')
+        form.style.width = "100%";
+      }
+    },
+  }
 }
 </script>
 
 <style lang="sass" scoped>
+
+
+
+
+
+
+
+
+
+.previous
+  font-size: 33px
+  padding: 30px
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  color: black
+
+
+
+.formulaire
+  height: 100%
+  width: 0
+  position: fixed
+  top: 0
+  left: 0
+  overflow-x: hidden
+  text-align: center
+  z-index: 10
+  background-color: #ffffff
 
 
 
@@ -68,32 +119,13 @@ export default {
 
 
 .container
-  height: 100vh
+  min-height: 100vh
+  height: 100%
   background: $color_1_of_6
   img
     padding-top: 70px
 
 
 
-.messagebox
-  position: relative
-  max-width: 30em
-  background-color: #fff
-  padding: 1em 1.5em
-  font-size: 1.25em
-  border-radius: 1rem
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2)
-
-.messagebox::before 
-  content: ''
-  position: absolute
-  width: 0
-  height: 0
-  bottom: 100%
-  left: 1.9em
-  border: .75rem solid transparent
-  border-top: none
-  border-bottom-color: #fff
-  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1))
 
 </style>

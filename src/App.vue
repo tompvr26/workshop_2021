@@ -102,4 +102,30 @@ html.is-animating .transition-fade
 .color-1
   color: $color_1_of_6
 
+
+
+
+
+
+.messagebox
+  position: relative
+  max-width: 30em
+  background-color: #fff
+  padding: 1em 1.5em
+  font-size: 1.25em
+  border-radius: 1rem
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2)
+
+.messagebox::before
+  content: ''
+  position: absolute
+  width: 0
+  height: 0
+  bottom: 100%
+  left: 1.9em
+  border: .75rem solid transparent
+  border-top: none
+  border-bottom-color: #fff
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1))
+
 </style>
