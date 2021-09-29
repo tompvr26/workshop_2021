@@ -107,6 +107,7 @@ h1
 
 
     summary
+
       position: relative
       display: flex
       flex-direction: row
@@ -134,7 +135,7 @@ h1
       padding: 6px
 
     ul
-      margin-top: 0px
+      margin-top: 0
       li
         text-align: justify
         cursor: default

@@ -39,7 +39,9 @@ $size-paragraphe: 18px
   -webkit-animation: text-blur-out 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both
   animation: text-blur-out 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both
 
-
+.scale-in-hor-center
+  -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+  animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
 
 
 @-webkit-keyframes text-focus-in 
@@ -84,3 +86,26 @@ $size-paragraphe: 18px
   100%
     -webkit-filter: blur(12px) opacity(0%)
     filter: blur(12px) opacity(0%)
+
+
+@-webkit-keyframes scale-in-hor-center
+  0%
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    opacity: 1
+
+  100%
+    -webkit-transform: scaleX(1)
+    transform: scaleX(1)
+    opacity: 1
+
+@keyframes scale-in-hor-center
+  0%
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    opacity: 1
+
+  100%
+    -webkit-transform: scaleX(1)
+    transform: scaleX(1)
+    opacity: 1
