@@ -1,35 +1,64 @@
 <template>
-  <div class="container">
-    <img src="../assets/icons8-bot.png" alt="">
-
-    <div class="messagebox">
-      <p>Salut 👋🏼</p>
-      <p>Moi c'est Ouuka, je suis votre bot assistant.</p>
-      <p>Vous êtes ici pour jouer à un mini jeu qui permettra de tester vos connaissances sur le cyber-harcèlement.</p>
-      <p>S'informer est la première étape contre le cyber-harcèlement, c'est pour ça qu'il est important de se renseigner.</p>
+  <div>
+    <div id="form" class="formulaire">
+      <div class="previous" v-on:click="toggleForm">&#8249;</div>
+      <FormQCM></FormQCM>
     </div>
 
-    <div class="messagebox" style="margin-top: 25px">
-      <p>Êtes-vous prêt à commencer ?</p>
+    <div class="container">
+      <img src="../assets/icons8-bot.png" alt="">
 
-      <div class="btn_rotate">
+      <div class="messagebox">
+        <p>Salut 👋🏼</p>
+        <p>Moi c'est Ouuka, je suis votre bot assistant.</p>
+        <p>Vous êtes ici pour jouer à un mini jeu qui permettra de tester vos connaissances sur le cyber-harcèlement.</p>
+        <p>S'informer est la première étape contre le cyber-harcèlement, c'est pour ça qu'il est important de se renseigner.</p>
+      </div>
+
+      <div class="messagebox" style="margin-top: 25px">
+        <p>Êtes-vous prêt à commencer ?</p>
+
+        <div class="btn_rotate" v-on:click="toggleForm">
         <span>
           <a href="#"></a>
         </span>
+        </div>
       </div>
     </div>
-
-
-
   </div>
 </template>
 
 <script>
 
-
+import FormQCM from "../components/ViewQCMPages/FormQCM";
 
 export default {
-  name: "QCM"
+  name: "QCM",
+  components: {FormQCM},
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleForm: function () {
+      this.isActive = !this.isActive;
+
+      const form = document.getElementById("form");
+
+      if (!this.isActive) {
+        console.log('if click');
+        form.classList.remove('scale-in-hor-center')
+
+        form.style.width = "0";
+
+      } else {
+        console.log('else click');
+        form.classList.add('scale-in-hor-center')
+        form.style.width = "100%";
+      }
+    },
+  }
 }
 </script>
 
@@ -76,6 +105,28 @@ export default {
   border-top: none
   border-bottom-color: #fff
   filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1))
+
+.previous
+  font-size: 33px
+  padding: 30px
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  color: black
+
+
+
+.formulaire
+  height: 100%
+  width: 0
+  position: fixed
+  top: 0
+  left: 0
+  overflow-x: hidden
+  text-align: center
+  z-index: 8
+  background-color: #ffffff
 
 
 
