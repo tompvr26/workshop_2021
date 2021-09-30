@@ -5,6 +5,7 @@ import NotFound from "../components/NotFound";
 import WhatIs from "../views/WhatIs";
 import ChatBot from "../views/ChatBot";
 import QCM from "../views/QCM";
+import Admin from "../views/Admin";
 
 
 
@@ -37,6 +38,14 @@ const routes = [
     component: ChatBot,
     meta: {
       title: "Discutons-ensembles",
+    }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin,
+    meta: {
+      title: "Administration",
     }
   },
 
