@@ -87,7 +87,7 @@ export default {
   left: 0
   overflow-x: hidden
   text-align: center
-  z-index: 10
+  z-index: 8
   background-color: #ffffff
 
 
@@ -103,6 +103,8 @@ export default {
 .grid-item
   text-align: center
   cursor: pointer
+  width: 50vw
+  margin: auto
   border-radius: 20px
   background: linear-gradient(145deg, #dabeff, #b8a0e1)
   box-shadow:  6px 6px 15px #ad97d5, -6px -6px 15px #ebcdff
