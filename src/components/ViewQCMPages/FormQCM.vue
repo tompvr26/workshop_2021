@@ -28,7 +28,6 @@
         </div>
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(0)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(1)">Continue</button>
 
     </template>
@@ -40,7 +39,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(1)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(0)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(2)">Continue</button>
     </template>
 
@@ -51,7 +50,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(2)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(1)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(3)">Continue</button>
     </template>
 
@@ -62,7 +61,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(3)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(2)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(4)">Continue</button>
     </template>
 
@@ -73,7 +72,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(4)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(3)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(5)">Continue</button>
     </template>
 
@@ -84,7 +83,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(5)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(4)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(6)">Continue</button>
     </template>
 
@@ -95,7 +94,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(6)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(5)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(7)">Continue</button>
     </template>
 
@@ -106,7 +105,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(7)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(6)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(8)">Continue</button>
     </template>
 
@@ -117,7 +116,7 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(8)">Retour</button>
+      <button class="return" type="button" @click.prevent="goToStep(7)">Retour</button>
       <button class="continue" type="button" @click.prevent="goToStep(9)">Continue</button>
     </template>
 
@@ -128,8 +127,17 @@
 
       </div>
 
-      <button class="retour" type="button" @click.prevent="goToStep(9)">Retour</button>
-      <button class="continue" type="button" @click.prevent="goToStep(10)">Continue</button>
+      <button class="return" type="button" @click.prevent="goToStep(8)">Retour</button>
+      <button class="continue" type="button" @click.prevent="goToStep(10)">Terminer</button>
+    </template>
+
+    <!-- Page 11 - Page de fin -->
+    <template id="step10" v-if="currentStep === 10">
+      <div class="container">
+        <h1>Bien joué :)</h1>
+
+      </div>
+
     </template>
 
 
