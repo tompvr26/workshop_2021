@@ -6,8 +6,6 @@
         <img src="../../assets/icons8-bot.png" alt="logo">
         <h1>Allons-y ! J'aimerais que tu me renseigne ton prénom ainsi que ton âge</h1>
 
-
-
         <div class="form-group">
           <label>Prénom</label>
           <input class="form-field" type="text" placeholder="Prénom" v-model="step1.name">
@@ -17,12 +15,6 @@
           <label>Âge</label>
           <input class="form-field" type="number" min="9" max="105" placeholder="Âge" v-model="step1.age">
         </div>
-
-
-
-
-
-
 
       </div>
 
@@ -54,6 +46,9 @@
       <img src="../../assets/icons8-bot.png" alt="logo">
       <h1>C'est parfait, pourrais-tu me dire dans laquelle de ces situations tu as été confronté</h1>
 
+      <div class="grid-container">
+        <div v-for="s in situations" v-bind:key="s.id">{{s.id}}</div>
+      </div>
 
 
       <button type="button" @click.prevent="goToStep(1)">Retour</button>
@@ -102,8 +97,6 @@
 
 
 
-
-
     <template id="step7" v-if="currentStep === 6">
       <strong>Prénom:</strong> {{ step1.name }}<br/>
       <strong>Âge:</strong> {{ step1.age }}<br/>
@@ -115,8 +108,7 @@
       <strong>Anonyma:</strong> {{ step6.anonyme }}<br/>
 
 
-
-      <input type="submit" value="Envoyer">
+      <input type="submit" v-on:click="submit" value="Envoyer">
     </template>
   </div>
 
@@ -126,13 +118,16 @@
 
 //const baseURL = "172.20.10.7";
 
+import axios from "axios";
+
 export default {
   name: "Formstepper",
   data() {
     return {
       currentStep: 0,
       colors: ['#ccb2fa', '#ecc6f7', '#ddb6f9', '#d3bdfa', '#d0d1fb', '#cee6fd'],
-
+      messages: [],
+      situations: [],
 
       step1: {
         name: '',
@@ -161,6 +156,7 @@ export default {
   },
   mounted() {
     document.getElementById("form").style.background = this.colors[0];
+    this.getSituation();
   },
 
 
@@ -168,7 +164,40 @@ export default {
     goToStep: function (step) {
       this.currentStep = step;
       document.getElementById("form").style.background = this.colors[step];
-    }
+    },
+    submit(){
+      axios.post('http://localhost:8000/usersMessages/',
+          {
+            firstName: this.step1.name,
+            age: this.step1.age,
+            phone: this.step2.phone,
+            email: this.step2.email,
+            description: this.step4.description,
+            bullyDate: this.step5.debut,
+            anonym: this.step6.anonyme,
+            isYou: this.step6.itsYou,
+            situation: this.step3.situation,
+            status: null,
+          }, {
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Origin': 'http://localhost:8000/usersMessages/',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers ': 'Origin, Content-Type, Accept'
+          }
+      );
+    },
+    getUsersMessages(){
+      axios.get("http://localhost:8000/usersMessages/",{
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Origin': 'http://localhost:8000'
+      }).then(response => this.messages = response.data);
+    },
+    getSituation(){
+      axios.get("http://localhost:8000/situations/",{
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Origin': 'http://localhost:8000'
+      }).then(response => this.situations = response.data);
+    },
   }
 }
 </script>
