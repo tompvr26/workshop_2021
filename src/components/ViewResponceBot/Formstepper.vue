@@ -47,7 +47,10 @@
       <h1>C'est parfait, pourrais-tu me dire dans laquelle de ces situations tu as été confronté</h1>
 
       <div class="grid-container">
-        <div v-for="s in situations" v-bind:key="s.id">{{s.id}}</div>
+        <div class="grid-items" v-for="s in situations" v-bind:key="s.id">
+          <label :for="s.name">{{s.name}}</label>
+          <input type="radio" :id="s.name" name="situation" :value="url+s.id+'/'" v-model="step3.situation">
+        </div>
       </div>
 
 
@@ -107,7 +110,6 @@
       <strong>Date commencement:</strong> {{ step5.debut }}<br/>
       <strong>Anonyma:</strong> {{ step6.anonyme }}<br/>
 
-
       <input type="submit" v-on:click="submit" value="Envoyer">
     </template>
   </div>
@@ -128,7 +130,7 @@ export default {
       colors: ['#ccb2fa', '#ecc6f7', '#ddb6f9', '#d3bdfa', '#d0d1fb', '#cee6fd'],
       messages: [],
       situations: [],
-
+      url: "http://127.0.0.1:8000/situations/",
       step1: {
         name: '',
         age: ''
